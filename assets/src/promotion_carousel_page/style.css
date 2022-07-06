@@ -1,0 +1,34 @@
+.wp-block-gymnasium-wellingdorf-promotion-carousel-page {
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    border-radius: 8px;
+}
+
+.wp-block-gymnasium-wellingdorf-promotion-carousel-page-image {
+    width: -webkit-fill-available;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+  
+.wp-block-gymnasium-wellingdorf-promotion-carousel-page-title  {
+  };
+  
+.wp-block-gymnasium-wellingdorf-promotion-carousel-page-content  {
+  
+};
+  
+.wp-block-gymnasium-wellingdorf-promotion-carousel-page-button button {
+  background-color: red !important;
+}
+
+.wp-block-gymnasium-wellingdorf-promotion-carousel-page-top-layer {
+    position: absolute;
+    z-index: 100;
+    margin: 12px;
+    display: inline;
+    bottom: 0;
+    left: 0;
+    right: 0;
+};
