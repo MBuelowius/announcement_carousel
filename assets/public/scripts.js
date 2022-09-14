@@ -105,16 +105,18 @@ var __awaiter = undefined && undefined.__awaiter || function (thisArg, _argument
 
 const PromotionCarouselWrapper = _ref => {
   let {
-    promotions
+    promotions,
+    autoScrollDuration,
+    scrollDuration
   } = _ref;
 
   var _a;
 
   const ref = react__WEBPACK_IMPORTED_MODULE_1___default().createRef();
   const [activeSlide, setActiveSlide] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0);
-  const scrollDuration = 300;
-  const autoScrollDuration = 2000;
-  let autoScrollInterval = setInterval(() => autoScroll(), autoScrollDuration);
+  const thisAutoScrollDuration = autoScrollDuration !== null && autoScrollDuration !== void 0 ? autoScrollDuration : 2000;
+  const thisScrollDuration = scrollDuration !== null && scrollDuration !== void 0 ? scrollDuration : 300;
+  let autoScrollInterval = setInterval(() => autoScroll(), thisAutoScrollDuration);
 
   function autoScroll() {
     if (activeSlide < promotions.length - 1) {
@@ -126,7 +128,7 @@ const PromotionCarouselWrapper = _ref => {
 
   function restartAutoScroll() {
     clearInterval(autoScrollInterval);
-    autoScrollInterval = setInterval(() => autoScroll(), autoScrollDuration);
+    autoScrollInterval = setInterval(() => autoScroll(), thisAutoScrollDuration);
   }
 
   function updateActiveSlide(slide) {
@@ -171,7 +173,7 @@ const PromotionCarouselWrapper = _ref => {
   function scrollToPreviousPage() {
     return __awaiter(this, void 0, void 0, function* () {
       const pageWidth = PageWidth(ref);
-      yield (0,_utils__WEBPACK_IMPORTED_MODULE_3__.scrollSmooth)(ref, scrollDuration, {
+      yield (0,_utils__WEBPACK_IMPORTED_MODULE_3__.scrollSmooth)(ref, thisScrollDuration, {
         x: -pageWidth
       }).then(() => {
         updateActiveSlide(activeSlide - 1);
@@ -183,7 +185,7 @@ const PromotionCarouselWrapper = _ref => {
   function scrollToNextPage() {
     return __awaiter(this, void 0, void 0, function* () {
       const pageWidth = PageWidth(ref);
-      yield (0,_utils__WEBPACK_IMPORTED_MODULE_3__.scrollSmooth)(ref, scrollDuration, {
+      yield (0,_utils__WEBPACK_IMPORTED_MODULE_3__.scrollSmooth)(ref, thisScrollDuration, {
         x: pageWidth
       }).then(() => {
         updateActiveSlide(activeSlide + 1);
@@ -196,7 +198,7 @@ const PromotionCarouselWrapper = _ref => {
     return __awaiter(this, void 0, void 0, function* () {
       const distance = index - activeSlide;
       const pageDistance = distance * PageWidth(ref);
-      yield (0,_utils__WEBPACK_IMPORTED_MODULE_3__.scrollSmooth)(ref, scrollDuration, {
+      yield (0,_utils__WEBPACK_IMPORTED_MODULE_3__.scrollSmooth)(ref, thisScrollDuration, {
         x: pageDistance
       }).then(() => {
         updateActiveSlide(index);

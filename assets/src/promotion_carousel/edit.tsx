@@ -42,16 +42,20 @@ export const edit = (props: BlockEditProps<PromotionCarouselProps>) => {
                     <RangeControl
                         value={attributes.scrollDuration ?? 300}
                         min={100}
-                        onChange={function (value?: number | undefined): void {
+                        max={1000}
+                        onChange={(value) => {
+                            if (value === undefined) return;
                             setAttributes({ scrollDuration: value });
                         }}
                     />
                     AutoScroll Timer
                     <RangeControl
-                        value={attributes.autoScrollDuration ?? 2000}
-                        min={500}
-                        onChange={function (value?: number | undefined): void {
+                        value={attributes.autoScrollDuration ?? 1000}
+                        min={1000}
+                        max={10000}
+                        onChange={(value) => {
                             console.log('test');
+                            if (value === undefined) return;
                             setAttributes({ autoScrollDuration: value });
                         }}
                     />

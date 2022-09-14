@@ -1,5 +1,4 @@
 import { registerBlockType } from '@wordpress/blocks';
-import { BlockAttributesMap } from '../utils';
 import { edit } from './edit';
 import { PromotionCarouselProps } from './interface';
 import save from './save';
@@ -15,6 +14,12 @@ const registerPromotionCarousel = () =>
             promotions: {
                 type: 'array',
                 default: []
+            },
+            scrollDuration: {
+                type: 'number'
+            },
+            autoScrollDuration: {
+                type: 'number'
             }
         },
         edit,

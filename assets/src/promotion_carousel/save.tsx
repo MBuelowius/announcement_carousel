@@ -7,9 +7,7 @@ function save(props: BlockSaveProps<PromotionCarouselProps>) {
     return (
         <div
             className="gymnasium-wellingdorf-promotion-carousel-wrapper"
-            data-gymnasium-wellingdorf-attributes={JSON.stringify(
-                props.attributes
-            )}
+            data-gymnasium-wellingdorf-attributes={JSON.stringify(props.attributes)}
         >
             <PromotionCarousel promotions={attributes.promotions} />
             <PromotionCarouselControls

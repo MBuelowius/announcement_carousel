@@ -6,6 +6,7 @@ export interface PromotionCarouselProps {
     scrollerRef?: RefObject<HTMLDivElement>;
     scrollDuration?: number;
     autoScrollDuration?: number;
+    test?: string;
 }
 
 export interface PromotionCarouselControlsProps {
@@ -19,4 +20,6 @@ export interface PromotionCarouselControlsProps {
 
 export interface PromotionCarouselWrapperProps {
     promotions: PromotionCarouselPageProps[];
+    scrollDuration?: number;
+    autoScrollDuration?: number;
 }
