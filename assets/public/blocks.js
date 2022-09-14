@@ -73,16 +73,18 @@ var __awaiter = undefined && undefined.__awaiter || function (thisArg, _argument
 
 const PromotionCarouselWrapper = _ref => {
   let {
-    promotions
+    promotions,
+    autoScrollDuration,
+    scrollDuration
   } = _ref;
 
   var _a;
 
   const ref = react__WEBPACK_IMPORTED_MODULE_1___default().createRef();
   const [activeSlide, setActiveSlide] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0);
-  const scrollDuration = 300;
-  const autoScrollDuration = 2000;
-  let autoScrollInterval = setInterval(() => autoScroll(), autoScrollDuration);
+  const thisAutoScrollDuration = autoScrollDuration !== null && autoScrollDuration !== void 0 ? autoScrollDuration : 2000;
+  const thisScrollDuration = scrollDuration !== null && scrollDuration !== void 0 ? scrollDuration : 300;
+  let autoScrollInterval = setInterval(() => autoScroll(), thisAutoScrollDuration);
 
   function autoScroll() {
     if (activeSlide < promotions.length - 1) {
@@ -94,7 +96,7 @@ const PromotionCarouselWrapper = _ref => {
 
   function restartAutoScroll() {
     clearInterval(autoScrollInterval);
-    autoScrollInterval = setInterval(() => autoScroll(), autoScrollDuration);
+    autoScrollInterval = setInterval(() => autoScroll(), thisAutoScrollDuration);
   }
 
   function updateActiveSlide(slide) {
@@ -139,7 +141,7 @@ const PromotionCarouselWrapper = _ref => {
   function scrollToPreviousPage() {
     return __awaiter(this, void 0, void 0, function* () {
       const pageWidth = PageWidth(ref);
-      yield (0,_utils__WEBPACK_IMPORTED_MODULE_3__.scrollSmooth)(ref, scrollDuration, {
+      yield (0,_utils__WEBPACK_IMPORTED_MODULE_3__.scrollSmooth)(ref, thisScrollDuration, {
         x: -pageWidth
       }).then(() => {
         updateActiveSlide(activeSlide - 1);
@@ -151,7 +153,7 @@ const PromotionCarouselWrapper = _ref => {
   function scrollToNextPage() {
     return __awaiter(this, void 0, void 0, function* () {
       const pageWidth = PageWidth(ref);
-      yield (0,_utils__WEBPACK_IMPORTED_MODULE_3__.scrollSmooth)(ref, scrollDuration, {
+      yield (0,_utils__WEBPACK_IMPORTED_MODULE_3__.scrollSmooth)(ref, thisScrollDuration, {
         x: pageWidth
       }).then(() => {
         updateActiveSlide(activeSlide + 1);
@@ -164,7 +166,7 @@ const PromotionCarouselWrapper = _ref => {
     return __awaiter(this, void 0, void 0, function* () {
       const distance = index - activeSlide;
       const pageDistance = distance * PageWidth(ref);
-      yield (0,_utils__WEBPACK_IMPORTED_MODULE_3__.scrollSmooth)(ref, scrollDuration, {
+      yield (0,_utils__WEBPACK_IMPORTED_MODULE_3__.scrollSmooth)(ref, thisScrollDuration, {
         x: pageDistance
       }).then(() => {
         updateActiveSlide(index);
@@ -293,16 +295,20 @@ const edit = props => {
         children: ["Animation Duration", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
           value: (_a = attributes.scrollDuration) !== null && _a !== void 0 ? _a : 300,
           min: 100,
-          onChange: function (value) {
+          max: 1000,
+          onChange: value => {
+            if (value === undefined) return;
             setAttributes({
               scrollDuration: value
             });
           }
         }), "AutoScroll Timer", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
-          value: (_b = attributes.autoScrollDuration) !== null && _b !== void 0 ? _b : 2000,
-          min: 500,
-          onChange: function (value) {
+          value: (_b = attributes.autoScrollDuration) !== null && _b !== void 0 ? _b : 1000,
+          min: 1000,
+          max: 10000,
+          onChange: value => {
             console.log('test');
+            if (value === undefined) return;
             setAttributes({
               autoScrollDuration: value
             });
@@ -492,6 +498,12 @@ const registerPromotionCarousel = () => (0,_wordpress_blocks__WEBPACK_IMPORTED_M
     promotions: {
       type: 'array',
       default: []
+    },
+    scrollDuration: {
+      type: 'number'
+    },
+    autoScrollDuration: {
+      type: 'number'
     }
   },
   edit: _edit__WEBPACK_IMPORTED_MODULE_1__.edit,

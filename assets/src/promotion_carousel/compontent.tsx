@@ -5,12 +5,16 @@ import { PromotionCarouselPageProps } from '../promotion_carousel_page/interface
 import { range, scrollSmooth } from '../utils';
 import { PromotionCarouselControlsProps, PromotionCarouselProps, PromotionCarouselWrapperProps } from './interface';
 
-export const PromotionCarouselWrapper: FC<PromotionCarouselWrapperProps> = ({ promotions }) => {
+export const PromotionCarouselWrapper: FC<PromotionCarouselWrapperProps> = ({
+    promotions,
+    autoScrollDuration,
+    scrollDuration
+}) => {
     const ref = React.createRef<HTMLDivElement>();
     const [activeSlide, setActiveSlide] = useState(0);
-    const scrollDuration = 300;
-    const autoScrollDuration = 2000;
-    let autoScrollInterval = setInterval(() => autoScroll(), autoScrollDuration);
+    const thisAutoScrollDuration = autoScrollDuration ?? 2000;
+    const thisScrollDuration = scrollDuration ?? 300;
+    let autoScrollInterval = setInterval(() => autoScroll(), thisAutoScrollDuration);
 
     function autoScroll() {
         if (activeSlide < promotions.length - 1) {
@@ -22,7 +26,7 @@ export const PromotionCarouselWrapper: FC<PromotionCarouselWrapperProps> = ({ pr
 
     function restartAutoScroll() {
         clearInterval(autoScrollInterval);
-        autoScrollInterval = setInterval(() => autoScroll(), autoScrollDuration);
+        autoScrollInterval = setInterval(() => autoScroll(), thisAutoScrollDuration);
     }
 
     function updateActiveSlide(slide: number) {
@@ -64,7 +68,7 @@ export const PromotionCarouselWrapper: FC<PromotionCarouselWrapperProps> = ({ pr
 
     async function scrollToPreviousPage(): Promise<void> {
         const pageWidth = PageWidth(ref);
-        await scrollSmooth(ref, scrollDuration, { x: -pageWidth }).then(() => {
+        await scrollSmooth(ref, thisScrollDuration, { x: -pageWidth }).then(() => {
             updateActiveSlide(activeSlide - 1);
             restartAutoScroll();
         });
@@ -72,7 +76,7 @@ export const PromotionCarouselWrapper: FC<PromotionCarouselWrapperProps> = ({ pr
 
     async function scrollToNextPage() {
         const pageWidth = PageWidth(ref);
-        await scrollSmooth(ref, scrollDuration, { x: pageWidth }).then(() => {
+        await scrollSmooth(ref, thisScrollDuration, { x: pageWidth }).then(() => {
             updateActiveSlide(activeSlide + 1);
             restartAutoScroll();
         });
@@ -81,7 +85,7 @@ export const PromotionCarouselWrapper: FC<PromotionCarouselWrapperProps> = ({ pr
     async function scrollToPage(index: number) {
         const distance = index - activeSlide;
         const pageDistance = distance * PageWidth(ref);
-        await scrollSmooth(ref, scrollDuration, { x: pageDistance }).then(() => {
+        await scrollSmooth(ref, thisScrollDuration, { x: pageDistance }).then(() => {
             updateActiveSlide(index);
             restartAutoScroll();
         });
