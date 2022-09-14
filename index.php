@@ -13,7 +13,9 @@
  */
 
 function custom_block_style_assets() {
-  wp_enqueue_style('wp-typescript', plugins_url('/assets/public/style-blocks.css', __FILE__,), array("wp-editor"));
+  wp_enqueue_style('wp-typescript', plugins_url('/assets/public/blocks.css', __FILE__,), array("wp-editor"));
+  wp_enqueue_style('wp-typescript-1', plugins_url('/assets/public/style-scripts.css', __FILE__,), array("wp-editor"));
+  wp_enqueue_style('wp-typescript-2', plugins_url('/assets/public/scripts.css', __FILE__,), array("wp-editor"));
 } 
 
 add_action( 'enqueue_block_assets', 'custom_block_style_assets' );

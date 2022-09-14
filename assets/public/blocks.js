@@ -35,6 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _promotion_carousel_page_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../promotion_carousel_page/component */ "./assets/src/promotion_carousel_page/component.tsx");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils */ "./assets/src/utils/index.ts");
+/* harmony import */ var _style_module_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.module.css */ "./assets/src/promotion_carousel/style.module.css");
 var __awaiter = undefined && undefined.__awaiter || function (thisArg, _arguments, P, generator) {
   function adopt(value) {
     return value instanceof P ? value : new P(function (resolve) {
@@ -66,6 +67,7 @@ var __awaiter = undefined && undefined.__awaiter || function (thisArg, _argument
     step((generator = generator.apply(thisArg, _arguments || [])).next());
   });
 };
+
 
 
 
@@ -111,7 +113,7 @@ const PromotionCarouselWrapper = _ref => {
     });
   });
   return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", Object.assign({
-    className: "gymnasium-wellingdorf-promotion-carousel-wrapper"
+    className: `gymnasium-wellingdorf-promotion-carousel-wrapper`
   }, {
     children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(PromotionCarousel, {
       promotions: indexedPromotions,
@@ -182,14 +184,14 @@ const PromotionCarousel = _ref2 => {
   } = _ref2;
   const children = promotions.map(promotion => (0,_promotion_carousel_page_component__WEBPACK_IMPORTED_MODULE_2__.PromotionCarouselPage)(Object.assign({}, promotion)));
   return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", Object.assign({
-    className: "gymnasium-wellingdorf-promotion-carousel"
+    className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].Carousel
   }, {
     children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", Object.assign({
-      className: "wp-block-gymnasium-wellingdorf-promotion-carousel-scroller"
+      className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].CarouselScroller
     }, {
       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", Object.assign({
         ref: scrollerRef,
-        className: "wp-block-gymnasium-wellingdorf-promotion-carousel-scroller-content"
+        className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].CarouselScrollerContent
       }, {
         children: children
       }))
@@ -206,12 +208,12 @@ const PromotionCarouselControls = props => {
   } = props;
   const slides = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.range)(0, totalSlides).map(index => {
     return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-      className: `gymnasium-wellingdorf-promotion-carousel-controls-dot ${activeSlide === index ? 'gymnasium-wellingdorf-promotion-carousel-controls-dot-selected' : ''}`,
+      className: `${_style_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].Dot} ${activeSlide === index ? `${_style_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].SelectedDot}` : ''}`,
       onClick: () => goToSlide(index)
     }, `promotion_carousel_control_${index}`);
   });
   return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", Object.assign({
-    className: "gymnasium-wellingdorf-promotion-carousel-controls"
+    className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].CarouselControls
   }, {
     children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", Object.assign({
       onClick: prevSlide,
@@ -219,12 +221,12 @@ const PromotionCarouselControls = props => {
     }, {
       children: '<'
     })), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", Object.assign({
-      className: "gymnasium-wellingdorf-promotion-carousel-controls-dots"
+      className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].Dots
     }, {
       children: slides
     })), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", Object.assign({
       onClick: nextSlide,
-      className: "gymnasium-wellingdorf-arrow-button material-icons mdc-icon-button mdc-ripple-upgraded--unbounded mdc-ripple-upgraded"
+      className: `${_style_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].ArrowButton} gymnasium-wellingdorf-arrow-button material-icons mdc-icon-button mdc-ripple-upgraded--unbounded mdc-ripple-upgraded`
     }, {
       children: '>'
     }))]
@@ -251,6 +253,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils */ "./assets/src/utils/index.ts");
+/* harmony import */ var _edit_styles_module_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./edit.styles.module.css */ "./assets/src/promotion_carousel/edit.styles.module.css");
+
 
 
 
@@ -355,7 +359,9 @@ const edit = props => {
       }))]
     }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h5", {
       children: "Pages"
-    }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
+    }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", Object.assign({
+      className: _edit_styles_module_css__WEBPACK_IMPORTED_MODULE_5__["default"].GymnasiumWellingdorfEditCarousel
+    }, {
       children: attributes.promotions.map((promotion, index) => {
         return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(PageEdit, {
           attributes: promotion,
@@ -364,7 +370,7 @@ const edit = props => {
           removeItem: removePage
         });
       })
-    }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, Object.assign({
+    })), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, Object.assign({
       onClick: () => setAttributes({
         promotions: [...attributes.promotions, {
           title: '',
@@ -485,8 +491,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./edit */ "./assets/src/promotion_carousel/edit.tsx");
 /* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./save */ "./assets/src/promotion_carousel/save.tsx");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.css */ "./assets/src/promotion_carousel/style.css");
-
 
 
  // const allowedBlocks = ["gymnasium-wellingdorf/promotion-carousel-page"];
@@ -572,7 +576,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components */ "./assets/src/promotion_carousel_page/components/index.tsx");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constants */ "./assets/src/promotion_carousel_page/constants.ts");
+/* harmony import */ var _styles_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.module.css */ "./assets/src/promotion_carousel_page/styles.module.css");
 
 
 
@@ -585,21 +589,21 @@ const PromotionCarouselPageWrapper = props => {
 };
 const PromotionCarouselPage = props => {
   return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", Object.assign({
-    className: _constants__WEBPACK_IMPORTED_MODULE_2__.mainClass,
+    className: _styles_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].PromotionCarouselPage,
     onContextMenu: e => e.preventDefault()
   }, {
     children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
-      className: _constants__WEBPACK_IMPORTED_MODULE_2__.imageClass,
+      className: _styles_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].PageImage,
       src: props.mediaUrl
     }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", Object.assign({
-      className: _constants__WEBPACK_IMPORTED_MODULE_2__.topLayerClass
+      className: _styles_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].PageTopLayer
     }, {
       children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h6", Object.assign({
-        className: _constants__WEBPACK_IMPORTED_MODULE_2__.titleClass
+        className: _styles_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].PageTitle
       }, {
         children: props.title
       })), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", Object.assign({
-        className: _constants__WEBPACK_IMPORTED_MODULE_2__.contentClass
+        className: _styles_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].PageContent
       }, {
         children: props.content
       })), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components__WEBPACK_IMPORTED_MODULE_1__.CarouselPageButton, {
@@ -626,44 +630,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "CarouselPageButton": () => (/* binding */ CarouselPageButton)
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants */ "./assets/src/promotion_carousel_page/components/carousel-page-button/constants.ts");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.css */ "./assets/src/promotion_carousel_page/components/carousel-page-button/style.css");
-
+/* harmony import */ var _styles_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.module.css */ "./assets/src/promotion_carousel_page/components/carousel-page-button/styles.module.css");
 
 
 const CarouselPageButton = props => {
   return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("button", Object.assign({
-    className: _constants__WEBPACK_IMPORTED_MODULE_1__.buttonClass,
+    className: _styles_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].button,
     type: "button",
     onClick: props.onClicked
   }, {
     children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-      className: _constants__WEBPACK_IMPORTED_MODULE_1__.buttonBackgroundClass
+      className: _styles_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].buttonBackground
     }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", Object.assign({
-      className: _constants__WEBPACK_IMPORTED_MODULE_1__.buttonContentClass
+      className: _styles_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].buttonContent
     }, {
       children: "Mehr Anzeigen"
     }))]
   }));
 };
-
-/***/ }),
-
-/***/ "./assets/src/promotion_carousel_page/components/carousel-page-button/constants.ts":
-/*!*****************************************************************************************!*\
-  !*** ./assets/src/promotion_carousel_page/components/carousel-page-button/constants.ts ***!
-  \*****************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "buttonBackgroundClass": () => (/* binding */ buttonBackgroundClass),
-/* harmony export */   "buttonClass": () => (/* binding */ buttonClass),
-/* harmony export */   "buttonContentClass": () => (/* binding */ buttonContentClass)
-/* harmony export */ });
-const buttonClass = 'gymnasium-wellingdorf-promotion-carousel-page-button';
-const buttonBackgroundClass = 'gymnasium-wellingdorf-promotion-carousel-page-button-background';
-const buttonContentClass = 'gymnasium-wellingdorf-promotion-carousel-page-button-content';
 
 /***/ }),
 
@@ -694,28 +678,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _carousel_page_button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./carousel-page-button */ "./assets/src/promotion_carousel_page/components/carousel-page-button/index.tsx");
 
-
-/***/ }),
-
-/***/ "./assets/src/promotion_carousel_page/constants.ts":
-/*!*********************************************************!*\
-  !*** ./assets/src/promotion_carousel_page/constants.ts ***!
-  \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "contentClass": () => (/* binding */ contentClass),
-/* harmony export */   "imageClass": () => (/* binding */ imageClass),
-/* harmony export */   "mainClass": () => (/* binding */ mainClass),
-/* harmony export */   "titleClass": () => (/* binding */ titleClass),
-/* harmony export */   "topLayerClass": () => (/* binding */ topLayerClass)
-/* harmony export */ });
-const mainClass = 'wp-block-gymnasium-wellingdorf-promotion-carousel-page';
-const imageClass = 'wp-block-gymnasium-wellingdorf-promotion-carousel-page-image';
-const titleClass = 'wp-block-gymnasium-wellingdorf-promotion-carousel-page-title';
-const contentClass = 'wp-block-gymnasium-wellingdorf-promotion-carousel-page-content';
-const topLayerClass = 'wp-block-gymnasium-wellingdorf-promotion-carousel-page-top-layer';
 
 /***/ }),
 
@@ -846,8 +808,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 /* harmony import */ var _component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./component */ "./assets/src/promotion_carousel_page/component.tsx");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.css */ "./assets/src/promotion_carousel_page/style.css");
-
 
 
 
@@ -1091,39 +1051,63 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./assets/src/promotion_carousel/style.css":
-/*!*************************************************!*\
-  !*** ./assets/src/promotion_carousel/style.css ***!
-  \*************************************************/
+/***/ "./assets/src/promotion_carousel/edit.styles.module.css":
+/*!**************************************************************!*\
+  !*** ./assets/src/promotion_carousel/edit.styles.module.css ***!
+  \**************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 // extracted by mini-css-extract-plugin
-
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"GymnasiumWellingdorfEditCarousel":"aSAmSVpympV5Vnvz0fo0","GymnasiumWellingdorfEditCarouselPage":"BmnedEXd2EwvA3IWEuCL"});
 
 /***/ }),
 
-/***/ "./assets/src/promotion_carousel_page/components/carousel-page-button/style.css":
-/*!**************************************************************************************!*\
-  !*** ./assets/src/promotion_carousel_page/components/carousel-page-button/style.css ***!
-  \**************************************************************************************/
+/***/ "./assets/src/promotion_carousel/style.module.css":
+/*!********************************************************!*\
+  !*** ./assets/src/promotion_carousel/style.module.css ***!
+  \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 // extracted by mini-css-extract-plugin
-
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"CarouselScroller":"tvCiyR0sG63CRx9NymQw","CarouselScrollerContent":"u6ckzHwLabr_dsvpDHlx","Carousel":"tFhi8B_0XrRy4wFykCnH","Dot":"GnWZnzKJeMT55VcSYIdY","SelectedDot":"zTbR1i9UAo6s2zaPtc1Y","CarouselControls":"vl7dfw8oStonahV0gWWW","Dots":"Qpb_beV6oBWpTDk9dTTi","ArrowButton":"pPfqnZg3opWh4eu_C3Tg"});
 
 /***/ }),
 
-/***/ "./assets/src/promotion_carousel_page/style.css":
-/*!******************************************************!*\
-  !*** ./assets/src/promotion_carousel_page/style.css ***!
-  \******************************************************/
+/***/ "./assets/src/promotion_carousel_page/components/carousel-page-button/styles.module.css":
+/*!**********************************************************************************************!*\
+  !*** ./assets/src/promotion_carousel_page/components/carousel-page-button/styles.module.css ***!
+  \**********************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 // extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"button":"ex46pH5qUFEzZAGc3h7v","buttonBackground":"Psb58BWV73XuanLZ1cM2","buttonContent":"fjQ6SAgel0RYW_sxswmW"});
 
+/***/ }),
+
+/***/ "./assets/src/promotion_carousel_page/styles.module.css":
+/*!**************************************************************!*\
+  !*** ./assets/src/promotion_carousel_page/styles.module.css ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"PromotionCarouselPage":"mcdehyhkFqilEvwPTJJL","PageImage":"Y1BU_HwQpf2tNq2uUYUR","PageTitle":"w23_ERvtBKVUdJICEai8","PageContent":"yJjOCAUKfMabfUPeBV8p","PageTopLayer":"us8r0FRZknyV3j0ayPGe"});
 
 /***/ }),
 
@@ -2626,8 +2610,7 @@ module.exports = window["wp"]["components"];
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"blocks": 0,
-/******/ 			"./style-scripts": 0,
-/******/ 			"./style-blocks": 0
+/******/ 			"./style-scripts": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -2679,7 +2662,7 @@ module.exports = window["wp"]["components"];
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["./style-scripts","./style-blocks"], () => (__webpack_require__("./assets/src/blocks.ts")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["./style-scripts"], () => (__webpack_require__("./assets/src/blocks.ts")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
