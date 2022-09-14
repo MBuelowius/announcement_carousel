@@ -12,10 +12,10 @@ It's recommended to also install [Git Updater](https://github.com/afragen/git-up
 For contributing, use the following commands in your command-line.
 ```
 // Clone the repository in your plugin or theme directory
-git clone git@github.com:/wp-typescript-starter.git
+git clone git@github.com:MBuelowius/announcement_carousel.git
 
 // Get to cloned directory
-cd wp-typescript-starter
+cd announcement_carousel
 
 // Install devDependecies
 npm install
