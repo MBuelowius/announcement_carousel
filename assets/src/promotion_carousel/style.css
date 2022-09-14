@@ -1,0 +1,72 @@
+.wp-block-gymnasium-wellingdorf-promotion-carousel_scroller {
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.wp-block-gymnasium-wellingdorf-promotion-carousel-scroller-content {
+    display: flex;
+    flex-basis: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    flex-grow: 1;
+    flex-shrink: 0;
+    position: relative;
+    flex-direction: row;
+}
+
+.wp-block-gymnasium-wellingdorf-promotion-carousel-scroller-content::-webkit-scrollbar {
+    display: none;
+}
+
+.wp-block-gymnasium-wellingdorf-promotion-carousel {
+    display: block;
+    overflow: hidden;
+}
+
+:root {
+    --controls-dot-size: 10px;
+}
+
+.gymnasium-wellingdorf-promotion-carousel-controls-dot {
+    width: var(--controls-dot-size, 10px);
+    height: var(--controls-dot-size, 10px);
+    border-radius: var(--controls-dot-size);
+    background-color: black;
+    transition: background-color 200ms;
+}
+
+.gymnasium-wellingdorf-promotion-carousel-controls-dot-selected {
+    background-color: var(--mdc-theme-primary, red);
+}
+
+.gymnasium-wellingdorf-promotion-carousel-controls-dot:hover {
+    background-color: var(--mdc-theme-primary, red);
+}
+
+.gymnasium-wellingdorf-promotion-carousel-controls {
+    display: flex;
+    flex-basis: auto;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.gymnasium-wellingdorf-promotion-carousel-controls-dots {
+    display: flex;
+    flex-basis: auto;
+    position: relative;
+    flex-direction: row;
+    gap: 30px;
+    align-self: center;
+}
+
+.gymnasium-wellingdorf-promotion-carousel {
+    display: flex;
+
+    overflow-y: hidden;
+}
+
+.gymnasium-wellingdorf-arrow-button {
+    text-align: center;
+}

@@ -1,0 +1,30 @@
+{
+    "name": "announcement_carousel",
+    "version": "1.0.0",
+    "author": "Maximilian Bülowius",
+    "description": "A starter package for using TypeScript with WordPress",
+    "devDependencies": {
+        "@types/wordpress__block-editor": "^7.0.0",
+        "@typescript-eslint/eslint-plugin": "^5.36.2",
+        "@typescript-eslint/parser": "^5.36.2",
+        "@wordpress/scripts": "latest",
+        "eslint": "^8.23.0",
+        "prettier": "^2.7.1",
+        "ts-loader": "latest",
+        "typescript": "^4.8.3"
+    },
+    "scripts": {
+        "build": "wp-scripts build",
+        "start": "wp-scripts start"
+    },
+    "dependencies": {
+        "@types/node": "^18.0.0",
+        "@types/react": "^18.0.14",
+        "@types/react-html-parser": "^2.0.2",
+        "@types/wordpress__blocks": "^11.0.1",
+        "@wordpress/block-editor": "^9.3.0",
+        "@wordpress/blocks": "^11.10.0",
+        "react": "^17.0.2",
+        "react-scripts": "^2.1.3"
+    }
+}

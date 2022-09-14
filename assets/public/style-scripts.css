@@ -1,0 +1,53 @@
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./assets/src/promotion_carousel_page/components/carousel-page-button/style.css ***!
+  \**********************************************************************************************************************************************************************************************************************************/
+.gymnasium-wellingdorf-promotion-carousel-page-button {
+    color: var(--mdc-theme-on-background, #000);
+    height: 36px;
+    border-radius: var(--mdc-button-radius, 4px);
+    min-width: 64px;
+    font-style: var(--mdc-typography-button-font-style, normal);
+    border: none;
+    box-sizing: border-box;
+    display: inline-flex;
+    font-family: var(--mdc-typography-button-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+    font-size: var(--mdc-typography-button-font-size, 0.875rem);
+    font-weight: var(--mdc-typography-button-font-weight, 500);
+    justify-content: center;
+    letter-spacing: var(--mdc-typography-button-letter-spacing, 0.0892857143em);
+    line-height: var(--mdc-typography-button-line-height, 2.25rem);
+    line-height: inherit;
+    outline: none;
+    overflow: visible;
+    padding: 8px;
+    position: relative;
+    -webkit-text-decoration: var(--mdc-typography-button-text-decoration, none);
+    text-decoration: var(--mdc-typography-button-text-decoration, none);
+    text-transform: var(--mdc-typography-button-text-transform, uppercase);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+         user-select: none;
+    vertical-align: middle;
+    text-align: center;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+}
+
+.gymnasium-wellingdorf-promotion-carousel-page-button-background {
+    opacity: 0.65;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    border-radius: var(--mdc-button-radius, 4px);
+    background-color: var(--mdc-theme-background, #fff);
+}
+
+.gymnasium-wellingdorf-promotion-carousel-page-button-content {
+    z-index: 2;
+}
+
+
+/*# sourceMappingURL=style-scripts.css.map*/

@@ -1,0 +1,14 @@
+.gymnasium-wellingdorf-edit-carousel {
+    display: flex;
+    flex-basis: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    flex-grow: 1;
+    flex-shrink: 0;
+    position: relative;
+    flex-direction: row;
+}
+
+.gymnasium-wellingdorf-edit-carousel-page {
+    width: 400px;
+}
