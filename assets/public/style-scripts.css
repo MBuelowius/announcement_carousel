@@ -1,52 +1,69 @@
-/*!**********************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./assets/src/promotion_carousel_page/components/carousel-page-button/style.css ***!
-  \**********************************************************************************************************************************************************************************************************************************/
-.gymnasium-wellingdorf-promotion-carousel-page-button {
-    color: var(--mdc-theme-on-background, #000);
-    height: 36px;
-    border-radius: var(--mdc-button-radius, 4px);
-    min-width: 64px;
-    font-style: var(--mdc-typography-button-font-style, normal);
-    border: none;
-    box-sizing: border-box;
-    display: inline-flex;
-    font-family: var(--mdc-typography-button-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
-    font-size: var(--mdc-typography-button-font-size, 0.875rem);
-    font-weight: var(--mdc-typography-button-font-weight, 500);
-    justify-content: center;
-    letter-spacing: var(--mdc-typography-button-letter-spacing, 0.0892857143em);
-    line-height: var(--mdc-typography-button-line-height, 2.25rem);
-    line-height: inherit;
-    outline: none;
-    overflow: visible;
-    padding: 8px;
+/*!****************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./assets/src/promotion_carousel/style.module.css ***!
+  \****************************************************************************************************************************************************************************************************/
+.tvCiyR0sG63CRx9NymQw {
+  
+}
+
+.u6ckzHwLabr_dsvpDHlx {
+    display: flex;
+    flex-basis: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    flex-grow: 1;
+    flex-shrink: 0;
     position: relative;
-    -webkit-text-decoration: var(--mdc-typography-button-text-decoration, none);
-    text-decoration: var(--mdc-typography-button-text-decoration, none);
-    text-transform: var(--mdc-typography-button-text-transform, uppercase);
-    -webkit-user-select: none;
-    -moz-user-select: none;
-         user-select: none;
-    vertical-align: middle;
+    flex-direction: row;
+}
+
+.u6ckzHwLabr_dsvpDHlx::-webkit-scrollbar {
+    display: none;
+}
+
+.tFhi8B_0XrRy4wFykCnH {
+    display: block;
+    overflow: hidden;
+}
+
+:root {
+    --controls-dot-size: 10px;
+}
+
+.GnWZnzKJeMT55VcSYIdY {
+    width: var(--controls-dot-size, 10px);
+    height: var(--controls-dot-size, 10px);
+    border-radius: var(--controls-dot-size);
+    background-color: black;
+    transition: background-color 200ms;
+}
+
+.zTbR1i9UAo6s2zaPtc1Y {
+    background-color: var(--mdc-theme-primary, red);
+}
+
+.GnWZnzKJeMT55VcSYIdY:hover {
+    background-color: var(--mdc-theme-primary, red);
+}
+
+.vl7dfw8oStonahV0gWWW {
+    display: flex;
+    flex-basis: auto;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.Qpb_beV6oBWpTDk9dTTi {
+    display: flex;
+    flex-basis: auto;
+    position: relative;
+    flex-direction: row;
+    gap: 30px;
+    align-self: center;
+}
+
+.pPfqnZg3opWh4eu_C3Tg {
     text-align: center;
-    background-color: transparent;
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-}
-
-.gymnasium-wellingdorf-promotion-carousel-page-button-background {
-    opacity: 0.65;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    position: absolute;
-    border-radius: var(--mdc-button-radius, 4px);
-    background-color: var(--mdc-theme-background, #fff);
-}
-
-.gymnasium-wellingdorf-promotion-carousel-page-button-content {
-    z-index: 2;
 }
 
 

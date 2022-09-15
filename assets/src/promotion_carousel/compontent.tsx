@@ -4,6 +4,7 @@ import { PromotionCarouselPage } from '../promotion_carousel_page/component';
 import { PromotionCarouselPageProps } from '../promotion_carousel_page/interface';
 import { range, scrollSmooth } from '../utils';
 import { PromotionCarouselControlsProps, PromotionCarouselProps, PromotionCarouselWrapperProps } from './interface';
+import styles from './style.module.css';
 
 export const PromotionCarouselWrapper: FC<PromotionCarouselWrapperProps> = ({
     promotions,
@@ -24,8 +25,11 @@ export const PromotionCarouselWrapper: FC<PromotionCarouselWrapperProps> = ({
         }
     }
 
-    function restartAutoScroll() {
+    function stopAutoScroll() {
         clearInterval(autoScrollInterval);
+    }
+
+    function runAutoScroll() {
         autoScrollInterval = setInterval(() => autoScroll(), thisAutoScrollDuration);
     }
 
@@ -43,7 +47,7 @@ export const PromotionCarouselWrapper: FC<PromotionCarouselWrapperProps> = ({
     });
 
     return (
-        <div className="gymnasium-wellingdorf-promotion-carousel-wrapper">
+        <div className={`gymnasium-wellingdorf-promotion-carousel-wrapper`}>
             <PromotionCarousel promotions={indexedPromotions} scrollerRef={ref} />
             <PromotionCarouselControls
                 goToSlide={(index) => {
@@ -68,26 +72,29 @@ export const PromotionCarouselWrapper: FC<PromotionCarouselWrapperProps> = ({
 
     async function scrollToPreviousPage(): Promise<void> {
         const pageWidth = PageWidth(ref);
+        stopAutoScroll();
         await scrollSmooth(ref, thisScrollDuration, { x: -pageWidth }).then(() => {
             updateActiveSlide(activeSlide - 1);
-            restartAutoScroll();
+            runAutoScroll();
         });
     }
 
     async function scrollToNextPage() {
         const pageWidth = PageWidth(ref);
+        stopAutoScroll();
         await scrollSmooth(ref, thisScrollDuration, { x: pageWidth }).then(() => {
             updateActiveSlide(activeSlide + 1);
-            restartAutoScroll();
+            runAutoScroll();
         });
     }
 
     async function scrollToPage(index: number) {
         const distance = index - activeSlide;
         const pageDistance = distance * PageWidth(ref);
+        stopAutoScroll();
         await scrollSmooth(ref, thisScrollDuration, { x: pageDistance }).then(() => {
             updateActiveSlide(index);
-            restartAutoScroll();
+            runAutoScroll();
         });
     }
 };
@@ -95,9 +102,9 @@ export const PromotionCarouselWrapper: FC<PromotionCarouselWrapperProps> = ({
 export const PromotionCarousel: FC<PromotionCarouselProps> = ({ promotions, scrollerRef }) => {
     const children = promotions.map((promotion) => PromotionCarouselPage({ ...promotion }));
     return (
-        <div className="gymnasium-wellingdorf-promotion-carousel">
-            <div className="wp-block-gymnasium-wellingdorf-promotion-carousel-scroller">
-                <div ref={scrollerRef} className="wp-block-gymnasium-wellingdorf-promotion-carousel-scroller-content">
+        <div className={styles.Carousel}>
+            <div className={styles.CarouselScroller}>
+                <div ref={scrollerRef} className={styles.CarouselScrollerContent}>
                     {children}
                 </div>
             </div>
@@ -114,26 +121,24 @@ export const PromotionCarouselControls: FC<PromotionCarouselControlsProps> = (
         return (
             <div
                 key={`promotion_carousel_control_${index}`}
-                className={`gymnasium-wellingdorf-promotion-carousel-controls-dot ${
-                    activeSlide === index ? 'gymnasium-wellingdorf-promotion-carousel-controls-dot-selected' : ''
-                }`}
+                className={`${styles.Dot} ${activeSlide === index ? `${styles.SelectedDot}` : ''}`}
                 onClick={() => goToSlide(index)}
             />
         );
     });
 
     return (
-        <div className="gymnasium-wellingdorf-promotion-carousel-controls">
+        <div className={styles.CarouselControls}>
             <button
                 onClick={prevSlide}
                 className="gymnasium-wellingdorf-arrow-button material-icons mdc-icon-button mdc-ripple-upgraded--unbounded mdc-ripple-upgraded"
             >
                 {'<'}
             </button>
-            <div className="gymnasium-wellingdorf-promotion-carousel-controls-dots">{slides}</div>
+            <div className={styles.Dots}>{slides}</div>
             <button
                 onClick={nextSlide}
-                className="gymnasium-wellingdorf-arrow-button material-icons mdc-icon-button mdc-ripple-upgraded--unbounded mdc-ripple-upgraded"
+                className={`${styles.ArrowButton} gymnasium-wellingdorf-arrow-button material-icons mdc-icon-button mdc-ripple-upgraded--unbounded mdc-ripple-upgraded`}
             >
                 {'>'}
             </button>

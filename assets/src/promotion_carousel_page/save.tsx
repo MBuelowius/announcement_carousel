@@ -1,7 +1,6 @@
 import { BlockSaveProps } from '@wordpress/blocks';
 import { PromotionCarouselPage } from './component';
 import { PromotionCarouselPageProps } from './interface';
-import './style.css';
 
 function save(props: BlockSaveProps<PromotionCarouselPageProps>) {
     const { attributes } = props;

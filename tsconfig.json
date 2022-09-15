@@ -6,6 +6,8 @@
       "target": "ES2015", // Set to ES5 for older browser support.
       "strict": true,
       "allowSyntheticDefaultImports": true,
-      "moduleResolution": "node"
+      "moduleResolution": "node",
+      "sourceMap": true,
+      "plugins": [{ "name": "typescript-plugin-css-modules" }],
   }
 }

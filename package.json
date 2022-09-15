@@ -8,10 +8,12 @@
         "@typescript-eslint/eslint-plugin": "^5.36.2",
         "@typescript-eslint/parser": "^5.36.2",
         "@wordpress/scripts": "latest",
+        "css-loader": "^6.7.1",
         "eslint": "^8.23.0",
         "prettier": "^2.7.1",
         "ts-loader": "latest",
-        "typescript": "^4.8.3"
+        "typescript": "^4.8.3",
+        "typescript-plugin-css-modules": "^3.4.0"
     },
     "scripts": {
         "build": "wp-scripts build",
@@ -24,6 +26,7 @@
         "@types/wordpress__blocks": "^11.0.1",
         "@wordpress/block-editor": "^10.0.0",
         "@wordpress/blocks": "^11.10.0",
+        "postcss": "^8.4.16",
         "react": "^17.0.2",
         "react-scripts": "^5.0.1"
     }

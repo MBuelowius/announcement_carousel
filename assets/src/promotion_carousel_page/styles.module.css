@@ -1,10 +1,8 @@
-@import './components/carousel-page-button/style.css';
-
 :root {
     --top-layer-margins: 8px
 }
 
-.wp-block-gymnasium-wellingdorf-promotion-carousel-page {
+.PromotionCarouselPage {
     position: relative;
     color: white;
     text-shadow: 1px 1px 2px black;
@@ -14,38 +12,48 @@
     height: 400px;
 }
 
-.wp-block-gymnasium-wellingdorf-promotion-carousel-page-image {
+.PageImage {
     width: -webkit-fill-available;
     height: 400px;
+    -o-object-fit: cover;
     object-fit: cover;
     border-radius: 8px;
     -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
     user-select: none;
 }
   
-.wp-block-gymnasium-wellingdorf-promotion-carousel-page-title  {
+.PageTitle  {
   
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.5);
+    width: -webkit-min-content;
+    width: -moz-min-content;
     width: min-content;
     border-radius: var(--mdc-button-radius, 4px);
     margin: 0;
     margin-bottom: var(--top-layer-margins, 8px);
+    -webkit-user-select: none;
+    -moz-user-select: none;
     user-select: none;
 }
   
-.wp-block-gymnasium-wellingdorf-promotion-carousel-page-content  {
-
+.PageContent  {
     padding: 10px;
+    width: -webkit-min-content;
+    width: -moz-min-content;
     width: min-content;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: var(--mdc-button-radius, 4px);
     margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
     user-select: none;
     margin-bottom: var(--top-layer-margins, 8px);
 }
 
-.wp-block-gymnasium-wellingdorf-promotion-carousel-page-top-layer {
+.PageTopLayer{
     position: absolute;
     z-index: 1;
     margin: 8px;
@@ -53,5 +61,4 @@
     bottom: 0;
     left: 0;
     right: 0;
-    
 }

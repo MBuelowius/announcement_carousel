@@ -1,10 +1,12 @@
 import { InspectorControls, MediaPlaceholder, URLInput } from '@wordpress/block-editor';
 import { BlockEditProps } from '@wordpress/blocks';
-import { Button, PanelBody, PanelRow, RangeControl, TextControl } from '@wordpress/components';
+import { Button, PanelBody, RangeControl, TextControl } from '@wordpress/components';
 import { FC, useState } from 'react';
 import { PromotionCarouselPageProps } from '../promotion_carousel_page/interface';
 import { range } from '../utils';
 import { PromotionCarouselProps } from './interface';
+import styles from './edit.styles.module.css';
+
 export const edit = (props: BlockEditProps<PromotionCarouselProps>) => {
     const { attributes, setAttributes } = props;
 
@@ -98,7 +100,7 @@ export const edit = (props: BlockEditProps<PromotionCarouselProps>) => {
                 </PanelBody>
             </InspectorControls>
             <h5>Pages</h5>
-            <PanelRow>
+            <div className={styles.GymnasiumWellingdorfEditCarousel}>
                 {attributes.promotions.map((promotion, index) => {
                     return (
                         <PageEdit
@@ -109,7 +111,7 @@ export const edit = (props: BlockEditProps<PromotionCarouselProps>) => {
                         />
                     );
                 })}
-            </PanelRow>
+            </div>
 
             <Button
                 onClick={() =>

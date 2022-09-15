@@ -1,4 +1,4 @@
-.gymnasium-wellingdorf-edit-carousel {
+.GymnasiumWellingdorfEditCarousel {
     display: flex;
     flex-basis: auto;
     overflow-x: scroll;
@@ -9,6 +9,6 @@
     flex-direction: row;
 }
 
-.gymnasium-wellingdorf-edit-carousel-page {
+.GymnasiumWellingdorfEditCarouselPage {
     width: 400px;
 }

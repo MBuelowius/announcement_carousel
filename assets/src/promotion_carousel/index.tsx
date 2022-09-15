@@ -2,7 +2,6 @@ import { registerBlockType } from '@wordpress/blocks';
 import { edit } from './edit';
 import { PromotionCarouselProps } from './interface';
 import save from './save';
-import './style.css';
 
 // const allowedBlocks = ["gymnasium-wellingdorf/promotion-carousel-page"];
 
