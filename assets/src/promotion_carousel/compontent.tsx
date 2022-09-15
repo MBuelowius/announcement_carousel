@@ -25,8 +25,11 @@ export const PromotionCarouselWrapper: FC<PromotionCarouselWrapperProps> = ({
         }
     }
 
-    function restartAutoScroll() {
+    function stopAutoScroll() {
         clearInterval(autoScrollInterval);
+    }
+
+    function runAutoScroll() {
         autoScrollInterval = setInterval(() => autoScroll(), thisAutoScrollDuration);
     }
 
@@ -69,26 +72,29 @@ export const PromotionCarouselWrapper: FC<PromotionCarouselWrapperProps> = ({
 
     async function scrollToPreviousPage(): Promise<void> {
         const pageWidth = PageWidth(ref);
+        stopAutoScroll();
         await scrollSmooth(ref, thisScrollDuration, { x: -pageWidth }).then(() => {
             updateActiveSlide(activeSlide - 1);
-            restartAutoScroll();
+            runAutoScroll();
         });
     }
 
     async function scrollToNextPage() {
         const pageWidth = PageWidth(ref);
+        stopAutoScroll();
         await scrollSmooth(ref, thisScrollDuration, { x: pageWidth }).then(() => {
             updateActiveSlide(activeSlide + 1);
-            restartAutoScroll();
+            runAutoScroll();
         });
     }
 
     async function scrollToPage(index: number) {
         const distance = index - activeSlide;
         const pageDistance = distance * PageWidth(ref);
+        stopAutoScroll();
         await scrollSmooth(ref, thisScrollDuration, { x: pageDistance }).then(() => {
             updateActiveSlide(index);
-            restartAutoScroll();
+            runAutoScroll();
         });
     }
 };

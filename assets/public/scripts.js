@@ -128,8 +128,11 @@ const PromotionCarouselWrapper = _ref => {
     }
   }
 
-  function restartAutoScroll() {
+  function stopAutoScroll() {
     clearInterval(autoScrollInterval);
+  }
+
+  function runAutoScroll() {
     autoScrollInterval = setInterval(() => autoScroll(), thisAutoScrollDuration);
   }
 
@@ -175,11 +178,12 @@ const PromotionCarouselWrapper = _ref => {
   function scrollToPreviousPage() {
     return __awaiter(this, void 0, void 0, function* () {
       const pageWidth = PageWidth(ref);
+      stopAutoScroll();
       yield (0,_utils__WEBPACK_IMPORTED_MODULE_3__.scrollSmooth)(ref, thisScrollDuration, {
         x: -pageWidth
       }).then(() => {
         updateActiveSlide(activeSlide - 1);
-        restartAutoScroll();
+        runAutoScroll();
       });
     });
   }
@@ -187,11 +191,12 @@ const PromotionCarouselWrapper = _ref => {
   function scrollToNextPage() {
     return __awaiter(this, void 0, void 0, function* () {
       const pageWidth = PageWidth(ref);
+      stopAutoScroll();
       yield (0,_utils__WEBPACK_IMPORTED_MODULE_3__.scrollSmooth)(ref, thisScrollDuration, {
         x: pageWidth
       }).then(() => {
         updateActiveSlide(activeSlide + 1);
-        restartAutoScroll();
+        runAutoScroll();
       });
     });
   }
@@ -200,11 +205,12 @@ const PromotionCarouselWrapper = _ref => {
     return __awaiter(this, void 0, void 0, function* () {
       const distance = index - activeSlide;
       const pageDistance = distance * PageWidth(ref);
+      stopAutoScroll();
       yield (0,_utils__WEBPACK_IMPORTED_MODULE_3__.scrollSmooth)(ref, thisScrollDuration, {
         x: pageDistance
       }).then(() => {
         updateActiveSlide(index);
-        restartAutoScroll();
+        runAutoScroll();
       });
     });
   }

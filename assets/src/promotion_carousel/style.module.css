@@ -1,7 +1,5 @@
 .CarouselScroller {
-    display: flex;
-    overflow-x: hidden;
-    overflow-y: hidden;
+  
 }
 
 .CarouselScrollerContent {

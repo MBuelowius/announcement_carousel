@@ -23,6 +23,7 @@ add_action( 'enqueue_block_assets', 'custom_block_style_assets' );
 function custom_blocks_assets() {
   $script_args = include( plugin_dir_path( __FILE__ ) . 'assets/public/blocks.asset.php');
   wp_enqueue_script('wp-typescript', plugins_url('/assets/public/blocks.js', __FILE__), $script_args['dependencies'], $script_args['version']);
+  wp_enqueue_script('wp-typescript', plugins_url('/assets/public/blocks.css', __FILE__), $script_args['dependencies'], $script_args['version']);
 }
 
 add_action('enqueue_block_editor_assets', "custom_blocks_assets");
