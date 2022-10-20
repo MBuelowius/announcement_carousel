@@ -35,6 +35,3 @@ function custom_script_assets() {
 
 add_action('wp_enqueue_scripts', 'custom_script_assets');
 ?>
-
-
-
