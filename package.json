@@ -4,7 +4,7 @@
     "author": "Maximilian Bülowius",
     "description": "A starter package for using TypeScript with WordPress",
     "devDependencies": {
-        "@types/wordpress__block-editor": "^7.0.0",
+        "@types/wordpress__block-editor": "^11.0.0",
         "@typescript-eslint/eslint-plugin": "^5.36.2",
         "@typescript-eslint/parser": "^5.36.2",
         "@wordpress/scripts": "latest",
